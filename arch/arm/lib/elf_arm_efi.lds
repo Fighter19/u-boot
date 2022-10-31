@@ -46,12 +46,12 @@ SECTIONS
 		*(COMMON)
 		. = ALIGN(512);
 		_bss_end = .;
-		_edata = .;
 	}
 	.rel.dyn : { *(.rel.dyn) }
 	.rel.plt : { *(.rel.plt) }
 	.rel.got : { *(.rel.got) }
 	.rel.data : { *(.rel.data) *(.rel.data*) }
+	_edata = .;
 	_data_size = . - _etext;
 
 	/DISCARD/ : {
